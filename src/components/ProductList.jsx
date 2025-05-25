@@ -17,10 +17,10 @@ function ProductList({ products, onEditProduct, onDeleteProduct }) {
           </tr>
         </thead>
         <tbody>
-            {products.map(producto => (
+            {products.map(product => (
               <ProductItem
-                key={producto.id}
-                producto={producto}
+                key={product.id}
+                product={product}
                 onEdit={onEditProduct}
                 onDelete={onDeleteProduct}
               />
