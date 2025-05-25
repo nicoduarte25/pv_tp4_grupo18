@@ -1,6 +1,7 @@
 import React from 'react';
+import ProductItem from './ProductItem';
 
-const ProductList = ({ products }) => {
+function ProductList({ products, onEditProduct, onDeleteProduct }) {
   return (
     <div>
       <h2>Lista de Productos</h2>
@@ -16,16 +17,14 @@ const ProductList = ({ products }) => {
           </tr>
         </thead>
         <tbody>
-          {products.map(producto => (
-            <tr key={producto.id}>
-              <td>{producto.id}</td>
-              <td>{producto.descripcion}</td>
-              <td>${producto.precioUnitario.toFixed(2)}</td>
-              <td>{producto.descuento}%</td>
-              <td>${producto.precioConDescuento.toFixed(2)}</td>
-              <td>{producto.stock}</td>
-            </tr>
-          ))}
+            {products.map(producto => (
+              <ProductItem
+                key={producto.id}
+                producto={producto}
+                onEdit={onEditProduct}
+                onDelete={onDeleteProduct}
+              />
+            ))}
         </tbody>
       </table>
     </div>

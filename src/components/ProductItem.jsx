@@ -1,23 +1,22 @@
 import React from 'react';
 
-function ProductItem({ product }) {
+function ProductItem({ product, onEdit, onDelete }) 
   return (
-    <div style={styles.item}>
-      <h3>{product.name}</h3>
-      <p>Precio: ${product.price}</p>
-      <p>Categoría: {product.category}</p>
-    </div>
+    <tr>
+      <td>{producto.id}</td>
+      <td>{producto.descripcion}</td>
+      <td>${producto.precioUnitario.toFixed(2)}</td>
+      <td>{producto.descuento}%</td>
+      <td>${producto.precioConDescuento.toFixed(2)}</td>
+      <td>{producto.stock}</td>
+      <td>
+        <button onClick={() => onEdit(producto)}>Editar</button>
+        <button onClick={() => onDelete(producto.id)}>Eliminar</button>
+      </td>
+    </tr>
   );
 }
 
-const styles = {
-  item: {
-    border: '1px solid #ccc',
-    padding: '12px',
-    borderRadius: '8px',
-    marginBottom: '10px',
-    backgroundColor: '#f9f9f9'
-  }
-};
+
 
 export default ProductItem;
