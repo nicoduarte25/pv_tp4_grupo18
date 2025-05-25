@@ -1,0 +1,27 @@
+.product-item button {
+  margin: 0 3px;
+  padding: 5px 10px;
+  font-size: 13px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-item button:first-of-type {
+  background-color: #28a745;
+  color: white;
+}
+
+.product-item button:first-of-type:hover {
+  background-color: #1e7e34;
+}
+
+.product-item button:last-of-type {
+  background-color: #dc3545;
+  color: white;
+}
+
+.product-item button:last-of-type:hover {
+  background-color: #b02a37;
+}
