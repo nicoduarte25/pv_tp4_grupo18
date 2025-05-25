@@ -1,19 +1,17 @@
 import React from 'react';
-// No se importa SearchBar.css aquí, ya que el usuario lo quiere sin estilos.
+import '../css/SearchBar.css';
 
-function SearchBar({ searchTerm, onSearchChange, placeholder }) {
+const SearchBar = ({ search, setSearch }) => {
   return (
-    <div className="search-bar-container">
+    <div className="search-bar">
       <input
         type="text"
-        placeholder={placeholder}
-        value={searchTerm}
-        onChange={onSearchChange}
-        className="search-input"
-        aria-label="Buscar producto"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Buscar por descripción o ID"
       />
     </div>
   );
-}
+};
 
 export default SearchBar;

@@ -1,0 +1,30 @@
+.app-container {
+  max-width: 900px;       /* ancho máximo para que no se expanda mucho */
+  margin: 30px auto;      /* centra el contenedor horizontalmente */
+  padding: 0 20px;        /* un poco de padding a los lados */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  
+  display: flex;          /* usar flexbox */
+  flex-direction: column; /* columna para apilar verticalmente */
+  align-items: center;    /* centra horizontalmente todos los hijos */
+  gap: 20px;              /* espacio vertical entre hijos */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: start; /* o center si querés vertical también */
+  background-color: #ddddddbd;
+}
