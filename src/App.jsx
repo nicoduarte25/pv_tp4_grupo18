@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList';
+import SearchBar from './components/Searchbar';
 
 function App() {
   const [products, setProducts] = useState([]);
