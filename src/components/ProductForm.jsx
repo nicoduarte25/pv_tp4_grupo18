@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 
 function ProductForm({ onAddProduct, products, productToEdit, clearEdit }) {
   const [productForm, setProductForm] = useState({
