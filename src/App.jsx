@@ -39,6 +39,7 @@ function App() {
         productToEdit={editingProduct}
         clearEdit={clearEdit}
       />
+       <SearchVar products={products} />
       <ProductList
         products={products}
         onEditProduct={handleEditProduct}
