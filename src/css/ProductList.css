@@ -1,0 +1,29 @@
+.product-list {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.product-list h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.product-list th, 
+.product-list td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-list th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+}

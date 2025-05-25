@@ -1,13 +1,13 @@
 import { useState, useCallback, useMemo } from 'react';
 import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList';
-import SearchBar from './components/searchBar';
-
+import SearchBar from './components/SearchBar';
+import './css/App.css';
 
 function App() {
   const [products, setProducts] = useState([]);
   const [editingProduct, setEditingProduct] = useState(null);
-  const [searchTerm, setSearchTerm] = useState(''); 
+  const [search, setSearch] = useState('');
 
   const handleAddOrEditProduct = useCallback((newProduct) => {
     setProducts(prev => {
@@ -32,39 +32,23 @@ function App() {
     setEditingProduct(null);
   }, []);
 
-  const handleSearchChange = useCallback((event) => {
-    setSearchTerm(event.target.value);
-  }, []);
-
   const filteredProducts = useMemo(() => {
-    if (!searchTerm) {
-      return products;
-    }
-    const lowerCaseSearchTerm = searchTerm.toLowerCase();
     return products.filter(product =>
-
-      (product.id && product.id.toString().toLowerCase().includes(lowerCaseSearchTerm)) ||
-      (product.descripcion && product.descripcion.toLowerCase().includes(lowerCaseSearchTerm))
+      product.descripcion.toLowerCase().includes(search.toLowerCase()) ||
+      product.id.toString().includes(search)
     );
-  }, [products, searchTerm]);
+  }, [search, products]);
 
   return (
-    <div>
+    <div className="app-container">
       <h1>Gestión de Productos</h1>
+      <SearchBar search={search} setSearch={setSearch} />
       <ProductForm
         onAddProduct={handleAddOrEditProduct}
         products={products}
         productToEdit={editingProduct}
         clearEdit={clearEdit}
       />
-
-      <SearchBar
-        searchTerm={searchTerm}
-        onSearchChange={handleSearchChange}
-        placeholder="Buscar productos por ID o descripcion"
-      />
-
-
       <ProductList
         products={filteredProducts}
         onEditProduct={handleEditProduct}

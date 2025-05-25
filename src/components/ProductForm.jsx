@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import React from 'react';
+import '../css/ProductForm.css';
 
 function ProductForm({ onAddProduct, products, productToEdit, clearEdit }) {
   const [productForm, setProductForm] = useState({
@@ -55,11 +55,12 @@ function ProductForm({ onAddProduct, products, productToEdit, clearEdit }) {
 
   return (
     <form
+      className="product-form"
       onSubmit={(e) => {
-        e.preventDefault();
-        addProduct();
+       e.preventDefault();
+       addProduct();
       }}
-     >
+    >
       <input name="id" value={productForm.id} placeholder="ID" onChange={handleInputChange} disabled={!!productToEdit} />
       <input name="descripcion" value={productForm.descripcion} placeholder="Descripción" onChange={handleInputChange} />
       <input name="precioUnitario" type="number" value={productForm.precioUnitario} placeholder="Precio Unitario" onChange={handleInputChange} />
