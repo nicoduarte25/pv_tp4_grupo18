@@ -3,6 +3,7 @@ import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList';
 import SearchBar from './components/searchBar';
 
+
 function App() {
   const [products, setProducts] = useState([]);
   const [editingProduct, setEditingProduct] = useState(null);
@@ -62,6 +63,7 @@ function App() {
         onSearchChange={handleSearchChange}
         placeholder="Buscar productos por ID o descripcion"
       />
+
 
       <ProductList
         products={filteredProducts}
