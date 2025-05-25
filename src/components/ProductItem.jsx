@@ -1,14 +1,14 @@
 import React from 'react';
 
-function ProductItem({ product, onEdit, onDelete }) 
+function ProductItem({ product, onEdit, onDelete }) {
   return (
     <tr>
-      <td>{producto.id}</td>
-      <td>{producto.descripcion}</td>
-      <td>${producto.precioUnitario.toFixed(2)}</td>
-      <td>{producto.descuento}%</td>
-      <td>${producto.precioConDescuento.toFixed(2)}</td>
-      <td>{producto.stock}</td>
+      <td>{product.id}</td>
+      <td>{product.descripcion}</td>
+      <td>${product.precioUnitario.toFixed(2)}</td>
+      <td>{product.descuento}%</td>
+      <td>${(product.precioUnitario * (1 - product.descuento / 100)).toFixed(2)}</td>
+      <td>{product.stock}</td>
       <td>
         <button onClick={() => onEdit(producto)}>Editar</button>
         <button onClick={() => onDelete(producto.id)}>Eliminar</button>
